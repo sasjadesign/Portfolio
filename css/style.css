@@ -1874,3 +1874,31 @@ body.dark .footer a:hover {
 @media (min-width: 1px) {
   #backToTop { right: 30px; bottom: 30px; } /* bei dir schon so */
 }
+
+/* ==================== HERO MOCKUP – DARK MODE FIX ==================== */
+body.dark .browser-mockup {
+  background: #0b1220;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark .browser-header {
+  background: #020617;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark .browser-url {
+  background: #020617;
+  color: #cbd5e1;
+}
+
+body.dark .mock-card {
+  background: #020617;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+body.dark .mock-title,
+body.dark .mock-text,
+body.dark .mock-nav,
+body.dark .mock-card-line {
+  background: rgba(255,255,255,0.12);
+}
