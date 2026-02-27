@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
         body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
     }
 
-    hamburger.addEventListener('click', toggleNav);
-    overlay.addEventListener('click', toggleNav);
+  if (hamburger) hamburger.addEventListener('click', toggleNav);
+if (overlay) overlay.addEventListener('click', toggleNav);
 
     // Close nav on link click
     document.querySelectorAll('.nav-link').forEach(link => {
