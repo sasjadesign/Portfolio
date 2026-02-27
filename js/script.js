@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // ==================== MOBILE NAVIGATION ====================
-    const hamburger = document.getElementById('hamburger');
+    const hamburger = document.getElementById('navHamburger');
     const navLinks = document.getElementById('navLinks');
     const body = document.body;
 
@@ -212,7 +212,7 @@ if (overlay) overlay.addEventListener('click', toggleNav);
 });
 
 // ==================== DARK MODE ====================
-const darkModeToggle = document.getElementById('darkModeToggle');
+const darkModeToggle = document.getElementById('theme-toggle');
 
 // Prüfe ob der User Dark Mode bevorzugt (System-Einstellung)
 function getPreferredTheme() {
