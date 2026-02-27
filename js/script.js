@@ -6,6 +6,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.getElementById('navLinks');
     const body = document.body;
 
+    // ==================== DARK MODE TOGGLE ====================
+const themeToggle = document.getElementById('theme-toggle');
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        body.classList.add('dark');
+        if (themeToggle) themeToggle.textContent = '☀️';
+    } else {
+        body.classList.remove('dark');
+        if (themeToggle) themeToggle.textContent = '🌙';
+    }
+}
+
+// gespeicherten Modus laden
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else {
+    // optional: System-Einstellung als Default
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? 'dark' : 'light');
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isDark = body.classList.toggle('dark');
+        const newTheme = isDark ? 'dark' : 'light';
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+}
+
     // Create overlay
     const overlay = document.createElement('div');
     overlay.classList.add('nav-overlay');
