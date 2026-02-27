@@ -1773,27 +1773,31 @@ img { max-width: 100%; display: block; }
     display: block;
 }
 
-/* ===== Dark Mode Variablen ===== */
-:root {
-    --bg-color: #ffffff;
-    --text-color: #111111;
-    --card-bg: #f5f5f5;
-}
-
+/* ==================== DARK MODE (override existing variables) ==================== */
 body.dark {
-    --bg-color: #0e0e0e;
-    --text-color: #f5f5f5;
-    --card-bg: #1a1a1a;
+  --white: #0b1220;          /* Flächen / Cards */
+  --bg: #070b14;             /* Sektionen mit bg */
+  --bg-dark: #030712;        /* Footer/very dark */
+  --secondary: #e5e7eb;      /* Headlines */
+  --text: #cbd5e1;           /* Fließtext */
+  --text-light: #94a3b8;     /* sekundärer Text */
+  --text-lighter: #64748b;   /* sehr leichter Text */
+  --border: rgba(255,255,255,0.10);
+
+  --primary-bg: rgba(79,70,229,0.18); /* Pills/Tags Hintergrund */
 }
 
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Optional: Navbar im dark Mode */
+body.dark .navbar.scrolled {
+  background: rgba(2, 6, 23, 0.85);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.35);
 }
 
-.portfolio-card {
-    background: var(--card-bg);
+/* Optional: Hero Verlauf im dark Mode */
+body.dark .hero {
+  background: radial-gradient(1200px 600px at 20% 20%, rgba(79,70,229,.25), transparent 60%),
+              radial-gradient(900px 500px at 80% 10%, rgba(168,85,247,.18), transparent 55%),
+              linear-gradient(135deg, #050816 0%, #050a18 60%, #070a14 100%);
 }
 
 /* Button */
