@@ -634,38 +634,43 @@
                     </div>
                 </div>
                 <div class="contact-form-wrapper" data-animate="fade-up" data-delay="100">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Name *</label>
-                            <input type="text" id="name" name="name" required placeholder="Dein Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">E-Mail *</label>
-                            <input type="email" id="email" name="email" required placeholder="deine@email.de">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Telefon (optional)</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+49 ...">
-                        </div>
-                        <div class="form-group">
-                            <label for="service">Gewünschtes Paket</label>
-                            <select id="service" name="service">
-                                <option value="">Bitte wählen...</option>
-                                <option value="starter">Starter (499€)</option>
-                                <option value="business">Business (999€)</option>
-                                <option value="premium">Premium (1.999€)</option>
-                                <option value="custom">Individuell</option>
-                            </select>
-                        </div>
-                        <div class="form-group full-width">
-                            <label for="message">Nachricht *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Erzähl mir von deinem Projekt..."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">
-                            <span>Nachricht senden</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                    <form class="contact-form" id="contactForm"
+      action="https://formspree.io/f/mkoveqnz"
+      method="POST">
+    <div class="form-group">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required placeholder="Dein Name">
+    </div>
+    <div class="form-group">
+        <label for="email">E-Mail *</label>
+        <input type="email" id="email" name="email" required placeholder="deine@email.de">
+    </div>
+    <div class="form-group">
+        <label for="phone">Telefon (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="+49 ...">
+    </div>
+    <div class="form-group">
+        <label for="service">Gewünschtes Paket</label>
+        <select id="service" name="service">
+            <option value="">Bitte wählen...</option>
+            <option value="Starter (499€)">Starter (499€)</option>
+            <option value="Business (999€)">Business (999€)</option>
+            <option value="Premium (1.999€)">Premium (1.999€)</option>
+            <option value="Individuell">Individuell</option>
+        </select>
+    </div>
+    <div class="form-group full-width">
+        <label for="message">Nachricht *</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Erzähl mir von deinem Projekt..."></textarea>
+    </div>
+    <!-- Formspree Honeypot (Spam-Schutz) -->
+    <input type="hidden" name="_subject" value="Neue Anfrage über deine Portfolio-Website">
+    <input type="text" name="_gotcha" style="display:none">
+    <button type="submit" class="btn btn-primary btn-lg btn-block">
+        <span>Nachricht senden</span>
+        <i class="fas fa-paper-plane"></i>
+    </button>
+</form>
                     <div class="form-success" id="formSuccess" style="display:none;">
                         <div class="success-icon"><i class="fas fa-check-circle"></i></div>
                         <h3>Nachricht gesendet!</h3>
