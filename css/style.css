@@ -1808,3 +1808,18 @@ body.dark .hero {
     cursor: pointer;
     color: inherit;
 }
+
+/* Footer bleibt dunkel, Text bleibt hell – auch im Dark Mode */
+body.dark .footer {
+  --white: #ffffff;          /* für .logo-text */
+  color: #94a3b8;            /* Footer-Text */
+}
+
+body.dark .footer a,
+body.dark .footer span {
+  color: #94a3b8;
+}
+
+body.dark .footer a:hover {
+  color: #ffffff;
+}
