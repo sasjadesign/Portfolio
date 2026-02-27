@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-   <!--Wartungsarbeit -->
-    <!-- <script>
-      window.location.replace('maintenance.html');
-    </script> -->
+   <script>
+(async () => {
+  try {
+    // Wenn maintenance.on existiert -> Wartungsseite
+    const res = await fetch('/maintenance.on', { cache: 'no-store' });
+    if (res.ok) window.location.replace('/maintenance.html');
+  } catch (e) {
+    // offline/fehler -> normal laden
+  }
+})();
+</script>
+  
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
