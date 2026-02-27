@@ -30,12 +30,15 @@ if (savedTheme) {
 }
 
 if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const isDark = body.classList.toggle('dark');
-        const newTheme = isDark ? 'dark' : 'light';
-        localStorage.setItem('theme', newTheme);
-        themeToggle.textContent = isDark ? '☀️' : '🌙';
-    });
+   themeToggle.addEventListener('click', () => {
+  themeToggle.classList.add('is-animating');
+  setTimeout(() => themeToggle.classList.remove('is-animating'), 350);
+
+  const isDark = body.classList.toggle('dark');
+  const newTheme = isDark ? 'dark' : 'light';
+  localStorage.setItem('theme', newTheme);
+  themeToggle.textContent = isDark ? '☀️' : '🌙';
+});
 }
 
     // Create overlay
