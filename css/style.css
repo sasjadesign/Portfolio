@@ -1836,3 +1836,40 @@ body.dark .footer a:hover {
 #theme-toggle.is-animating {
   transform: rotate(180deg) scale(1.15);
 }
+
+/* ==================== THEME TOGGLE (fixed like back-to-top) ==================== */
+#theme-toggle {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+
+  font-size: 1.1rem;
+  cursor: pointer;
+
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+
+  z-index: 1001; /* über content/overlay */
+}
+
+#theme-toggle:hover {
+  background: var(--primary-dark);
+  transform: translateY(-4px);
+}
+
+/* optional: ein bisschen Abstand, damit es nicht mit Back-to-top kollidiert */
+@media (min-width: 1px) {
+  #backToTop { right: 30px; bottom: 30px; } /* bei dir schon so */
+}
