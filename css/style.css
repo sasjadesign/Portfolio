@@ -1865,8 +1865,9 @@ body.dark .footer a:hover {
 }
 
 #theme-toggle:hover {
-  background: var(--primary-dark);
-  transform: translateY(-4px);
+   background: var(--primary-dark);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+  animation: spinPop 0.45s ease;
 }
 
 /* optional: ein bisschen Abstand, damit es nicht mit Back-to-top kollidiert */
