@@ -1823,3 +1823,16 @@ body.dark .footer span {
 body.dark .footer a:hover {
   color: #ffffff;
 }
+
+/* Darkmode Icon Animation */
+#theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+#theme-toggle.is-animating {
+  transform: rotate(180deg) scale(1.15);
+}
