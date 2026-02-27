@@ -1770,3 +1770,205 @@ img { max-width: 100%; display: block; }
 .nav-overlay.active {
     display: block;
 }
+/* ==================== DARK MODE TOGGLE BUTTON ==================== */
+.dark-mode-toggle {
+    background: none;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.dark-mode-toggle:hover {
+    background: var(--accent);
+    color: #fff;
+    transform: rotate(30deg);
+}
+
+/* Icon-Umschaltung */
+.dark-mode-toggle .fa-sun {
+    display: none;
+}
+
+.dark-mode-toggle .fa-moon {
+    display: block;
+}
+
+body.dark-mode .dark-mode-toggle .fa-sun {
+    display: block;
+}
+
+body.dark-mode .dark-mode-toggle .fa-moon {
+    display: none;
+}
+
+/* ==================== DARK MODE FARBEN ==================== */
+body.dark-mode {
+    --bg: #0f0f13;
+    --bg-secondary: #1a1a24;
+    --bg-card: #1e1e2a;
+    --text: #e4e4e8;
+    --text-secondary: #a0a0b0;
+    --heading: #ffffff;
+    --border: rgba(255, 255, 255, 0.08);
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Hintergrund */
+body.dark-mode {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+    background: rgba(15, 15, 19, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
+
+body.dark-mode .nav-link {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .nav-link:hover,
+body.dark-mode .nav-link.active {
+    color: var(--accent);
+}
+
+/* Überschriften */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: var(--heading);
+}
+
+body.dark-mode .section-title {
+    color: var(--heading);
+}
+
+body.dark-mode .section-subtitle {
+    color: var(--text-secondary);
+}
+
+/* Sektionen */
+body.dark-mode section {
+    background-color: var(--bg);
+}
+
+body.dark-mode section:nth-child(even) {
+    background-color: var(--bg-secondary);
+}
+
+/* Karten (Portfolio, Services, etc.) */
+body.dark-mode .portfolio-card,
+body.dark-mode .service-card,
+body.dark-mode .pricing-card,
+body.dark-mode .process-step,
+body.dark-mode .testimonial-card,
+body.dark-mode .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+body.dark-mode .portfolio-card:hover,
+body.dark-mode .service-card:hover,
+body.dark-mode .pricing-card:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+/* Pricing hervorgehoben */
+body.dark-mode .pricing-card.featured {
+    background: var(--bg-card);
+    border: 2px solid var(--accent);
+}
+
+/* Kontaktformular */
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea,
+body.dark-mode .contact-form select {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+body.dark-mode .contact-form input::placeholder,
+body.dark-mode .contact-form textarea::placeholder {
+    color: var(--text-secondary);
+}
+
+body.dark-mode .contact-form input:focus,
+body.dark-mode .contact-form textarea:focus,
+body.dark-mode .contact-form select:focus {
+    border-color: var(--accent);
+    background: var(--bg);
+}
+
+body.dark-mode .contact-form label {
+    color: var(--text-secondary);
+}
+
+/* Footer */
+body.dark-mode footer {
+    background: #0a0a0f;
+    color: var(--text-secondary);
+}
+
+/* Hero */
+body.dark-mode .hero {
+    background: linear-gradient(135deg, var(--bg) 0%, var(--bg-secondary) 100%);
+}
+
+/* Stats / Counter */
+body.dark-mode .stat-number,
+body.dark-mode .counter {
+    color: var(--accent);
+}
+
+/* Text allgemein */
+body.dark-mode p {
+    color: var(--text-secondary);
+}
+
+/* Tags */
+body.dark-mode .portfolio-tags span {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+}
+
+/* Scroll-to-top Button */
+body.dark-mode .scroll-top {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+
+/* FAQ */
+body.dark-mode .faq-question {
+    color: var(--heading);
+}
+
+body.dark-mode .faq-answer {
+    color: var(--text-secondary);
+}
+
+/* Transition für sanftes Umschalten */
+body.dark-mode,
+body.dark-mode *:not(img):not(video):not(iframe) {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
