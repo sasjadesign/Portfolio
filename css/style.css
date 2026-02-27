@@ -1760,6 +1760,7 @@ img { max-width: 100%; display: block; }
 
 /* Mobile menu overlay */
 .nav-overlay {
+    pointer-events: none;   /* <--- blockiert NICHT mehr */
     display: none;
     position: fixed;
     inset: 0;
@@ -1768,6 +1769,7 @@ img { max-width: 100%; display: block; }
 }
 
 .nav-overlay.active {
+      pointer-events: auto;   /* <--- blockiert nur wenn Menü offen ist */
     display: block;
 }
 
