@@ -12,10 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Dark Mode umschalten">
-    <i class="fas fa-moon"></i>
-    <i class="fas fa-sun"></i>
-</button>
 </head>
 <body>
 
@@ -35,13 +31,21 @@
                 <li><a href="#testimonials" class="nav-link">Referenzen</a></li>
                 <li><a href="#contact" class="nav-link cta-link">Kontakt</a></li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            
+             <div class="nav-actions">
+            <!-- Dark Mode Toggle HIER -->
+            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Dark Mode">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
             </button>
+            <a href="#contact" class="btn btn-primary nav-cta">Kontakt</a>
+            <div class="nav-hamburger" id="navHamburger">
+                <span></span><span></span><span></span>
+            </div>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero" id="hero">
