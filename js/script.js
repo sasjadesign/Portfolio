@@ -210,3 +210,49 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// ==================== DARK MODE ====================
+const darkModeToggle = document.getElementById('darkModeToggle');
+
+// Prüfe ob der User Dark Mode bevorzugt (System-Einstellung)
+function getPreferredTheme() {
+    const saved = localStorage.getItem('darkMode');
+    if (saved !== null) {
+        return saved === 'true';
+    }
+    // Falls nichts gespeichert, System-Einstellung nutzen
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+// Dark Mode anwenden
+function applyDarkMode(isDark) {
+    if (isDark) {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+}
+
+// Beim Laden der Seite
+applyDarkMode(getPreferredTheme());
+
+// Toggle-Button Klick
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', function () {
+        const isDark = !document.body.classList.contains('dark-mode');
+        applyDarkMode(isDark);
+        try {
+            localStorage.setItem('darkMode', isDark);
+        } catch (e) {
+            // localStorage nicht verfügbar – kein Problem
+        }
+    });
+}
+
+// Reagiere auf Änderungen der System-Einstellung
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+    const saved = localStorage.getItem('darkMode');
+    if (saved === null) {
+        applyDarkMode(e.matches);
+    }
+});
