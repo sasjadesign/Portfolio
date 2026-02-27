@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // ==================== CONTACT FORM ====================
+   // ==================== CONTACT FORM ====================
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
 
@@ -140,16 +140,40 @@ document.addEventListener('DOMContentLoaded', function () {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Simulate sending
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalHTML = submitBtn.innerHTML;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Wird gesendet...';
             submitBtn.disabled = true;
 
-            setTimeout(() => {
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-            }, 1500);
+            // Formulardaten sammeln
+            const formData = new FormData(contactForm);
+
+            // An Formspree senden
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    // Erfolg – Formular ausblenden, Erfolgsmeldung zeigen
+                    contactForm.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                } else {
+                    // Fehler von Formspree
+                    throw new Error('Formular konnte nicht gesendet werden.');
+                }
+            })
+            .catch(function (error) {
+                // Fehlermeldung anzeigen
+                submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Fehler – bitte erneut versuchen';
+                submitBtn.disabled = false;
+                setTimeout(function () {
+                    submitBtn.innerHTML = originalHTML;
+                }, 3000);
+            });
         });
     }
 
