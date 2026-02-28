@@ -36,7 +36,7 @@
   <script>
 (async () => {
   try {
-    // Wenn maintenance.on NICHT mehr existiert -> zurück zur Website
+    // Wenn maintenance.on NICHT mehr existiert .-> zurück zur Website
     const res = await fetch('/maintenance.on', { cache: 'no-store' });
     if (!res.ok) window.location.replace('/');
   } catch (e) {}
@@ -44,3 +44,4 @@
 </script>
 </body>
 </html>
+
