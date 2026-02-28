@@ -2397,3 +2397,15 @@ html.dark .cookie-footer-links span {
     color: #334155;
 }
 
+body.dark .portfolio-placeholder,
+html.dark .portfolio-placeholder {
+    background: linear-gradient(135deg, rgba(79,70,229,0.2), rgba(124,58,237,0.15));
+}
+body.dark .portfolio-placeholder.color-2,
+html.dark .portfolio-placeholder.color-2 {
+    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(96,165,250,0.1));
+}
+body.dark .portfolio-placeholder.color-3,
+html.dark .portfolio-placeholder.color-3 {
+    background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(244,114,182,0.1));
+}
