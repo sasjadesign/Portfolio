@@ -754,18 +754,20 @@ img { max-width: 100%; display: block; }
     height: 220px;
 }
 
-.portfolio-placeholder {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-
 .portfolio-preview {
-    position: relative;
-    z-index: 1;
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.portfolio-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-bg), #ddd6fe);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 .portfolio-placeholder.color-2 {
@@ -1600,29 +1602,17 @@ img { max-width: 100%; display: block; }
 .cookie-overlay {
     position: fixed;
     inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 99999;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 24px;
-
-    /* ❌ KEIN Blur im Grundzustand */
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    background: transparent;
-
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-
-/* ✅ Blur NUR wenn Banner sichtbar ist */
-.cookie-overlay.visible {
-    opacity: 1;
-    visibility: visible;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
 }
 
 .cookie-overlay.visible {
@@ -2407,17 +2397,4 @@ html.dark .cookie-footer-links a {
 body.dark .cookie-footer-links span,
 html.dark .cookie-footer-links span {
     color: #334155;
-}
-
-body.dark .portfolio-placeholder,
-html.dark .portfolio-placeholder {
-    background: linear-gradient(135deg, rgba(79,70,229,0.2), rgba(124,58,237,0.15));
-}
-body.dark .portfolio-placeholder.color-2,
-html.dark .portfolio-placeholder.color-2 {
-    background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(96,165,250,0.1));
-}
-body.dark .portfolio-placeholder.color-3,
-html.dark .portfolio-placeholder.color-3 {
-    background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(244,114,182,0.1));
 }
